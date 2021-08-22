@@ -1,0 +1,6 @@
+.play {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  height: 412px;
+};

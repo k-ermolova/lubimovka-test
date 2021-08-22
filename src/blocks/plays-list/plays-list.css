@@ -1,0 +1,7 @@
+.plays-list {
+  display: grid;
+  grid-template-columns: 240px 240px 240px;
+  gap: 29px;
+  margin: 0 94px 187px 123px;
+  padding: 0;
+};
