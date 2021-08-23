@@ -1,6 +1,6 @@
-function Title() {
+function Title(props) {
   return (
-    <h1 className='title'>По запросу «август» мы нашли</h1>
+    <h1 className='title'>{props.title}</h1>
   );
 }
 
