@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import JSONDATA from '../utils/data.json';
 
 function App() {
+  const dataList = JSONDATA.result;
   const [searchTerm, setSearchTerm] = useState('');
   const [title, setTitle] = useState('Поиск');
 
@@ -33,23 +34,17 @@ function App() {
     return str.toLowerCase().includes(searchTerm.toLowerCase());
   };
 
-  const checkFullContent = (val) => {
-    return (checkContent(val.title) ||
-    checkContent(val.author_firstName) ||
-    checkContent(val.author_lastName) ||
-    checkContent(val.city))
-  }
 
-  const filteredCards = JSONDATA.result.filter((value) => {
+  const filteredCards = dataList.filter((val) => {
     if (searchTerm === '') {
       return;
-    } else if (checkFullContent(value)) {
-      return value;
+    } else if (checkContent(val.title)) {
+      return val;
     }
   });
 
 
-  const filteredAuthors = JSONDATA.result.filter((val) => {
+  const filteredAuthors = dataList.filter((val) => {
     if (searchTerm === '') {
       return;
     } else if (
