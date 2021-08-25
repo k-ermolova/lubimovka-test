@@ -13,8 +13,8 @@ function Authors(props) {
   const lastNameGroup = Object.values(lastName);
 
   return (
-    lastNameGroup.map((author) => (
-      <li>
+    lastNameGroup.map((author, index) => (
+      <li key={index}>
       <span className='authors__letter'>{author.group}</span>
       <ul className='authors-list'>
         {author.children.map(item => (<Author key={item._id}

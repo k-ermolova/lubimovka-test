@@ -15,12 +15,56 @@ function App() {
     term = event.target.value;
   };
 
-  const handleTitle = (term) => {
-    if (term) {
-      setSearchTerm(term);
-      setTitle(`По запросу «${term}» мы нашли`);
-    } else if (term !== undefined) {
+  const checkContent = (str, term) => {
+    return str.toLowerCase().includes(term.toLowerCase());
+  };
+
+  const checkTitle = () => {
+    return (searchTerm === '') || (title === 'Поиск');
+  };
+
+  // eslint-disable-next-line
+  const filteredCards = dataList.filter((val) => {
+    if (checkTitle()) {
+      // eslint-disable-next-line
+      return;
+    } else if (checkContent(val.title, searchTerm)) {
+      return val;
+    }
+  });
+
+  // eslint-disable-next-line
+  const filteredAuthors = dataList.filter((val) => {
+    if (checkTitle()) {
+      // eslint-disable-next-line
+      return;
+    } else if (
+      checkContent(val.author_firstName, searchTerm) ||
+      checkContent(val.author_lastName, searchTerm)
+    ) {
+      return val;
+    }
+  });
+
+  const checkAll = (item) => {
+    const contain = (element) => {
+      return checkContent(element.author_firstName, item) || 
+      checkContent(element.author_lastName, item) || 
+      checkContent(element.title, item);
+    };
+
+    return dataList.some(contain);
+  };
+
+  const handleTitle = (arg) => {
+    if (arg === (undefined || '')) {
       setTitle('Поиск');
+    } else if (!checkAll(arg)) {
+      setSearchTerm(arg);
+      setTitle(`По запросу «${arg}» мы ничего не нашли`);
+    } else if (checkAll(arg)) {
+      setSearchTerm(arg);
+      setTitle(`По запросу «${arg}» мы нашли`);
     }
   };
 
@@ -29,35 +73,6 @@ function App() {
 
     handleTitle(term);
   };
-
-  const checkContent = (str) => {
-    return str.toLowerCase().includes(searchTerm.toLowerCase());
-  };
-
-  const checkTitle = () => {
-    return (searchTerm === '') || (title === 'Поиск');
-  };
-
-
-  const filteredCards = dataList.filter((val) => {
-    if (checkTitle()) {
-      return;
-    } else if (checkContent(val.title)) {
-      return val;
-    }
-  });
-
-
-  const filteredAuthors = dataList.filter((val) => {
-    if (checkTitle()) {
-      return;
-    } else if (
-      checkContent(val.author_firstName) ||
-      checkContent(val.author_lastName)
-    ) {
-      return val;
-    } 
-  });
 
 
   return (
