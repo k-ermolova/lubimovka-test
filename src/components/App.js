@@ -1,7 +1,7 @@
 import Request from './Request';
 import Title from './Title';
 import Response from './Response';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import JSONDATA from '../utils/data.json';
 
 function App() {
@@ -34,9 +34,13 @@ function App() {
     return str.toLowerCase().includes(searchTerm.toLowerCase());
   };
 
+  const checkTitle = () => {
+    return (searchTerm === '') || (title === 'Поиск');
+  };
+
 
   const filteredCards = dataList.filter((val) => {
-    if (searchTerm === '') {
+    if (checkTitle()) {
       return;
     } else if (checkContent(val.title)) {
       return val;
@@ -45,14 +49,14 @@ function App() {
 
 
   const filteredAuthors = dataList.filter((val) => {
-    if (searchTerm === '') {
+    if (checkTitle()) {
       return;
     } else if (
       checkContent(val.author_firstName) ||
       checkContent(val.author_lastName)
     ) {
       return val;
-    }
+    } 
   });
 
 

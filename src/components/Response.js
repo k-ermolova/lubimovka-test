@@ -9,6 +9,13 @@ function Response(props) {
   handleOrder(props.cards, 'title');
   handleOrder(props.authors, 'author_lastName');
 
+  const uniqueAuthors = props.authors.reduce((unique, current) => {
+    if (!unique.some(obj => obj.author_lastName === current.author_lastName && obj.value === current.value)) {
+      unique.push(current);
+    }
+    return unique;
+  }, []);
+
   return (
     <section className='response'>
       <ul className='plays-list'>
@@ -18,7 +25,7 @@ function Response(props) {
         ))}
       </ul>
       <ul className='authors'>
-        <Authors authors={props.authors} />
+        <Authors authors={uniqueAuthors} />
       </ul>
     </section>
   );

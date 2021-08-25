@@ -13,16 +13,17 @@ function Authors(props) {
   const lastNameGroup = Object.values(lastName);
 
   return (
-    <li>
-      <span className='authors__letter'>{lastNameGroup.map(author => author.group)}</span>
+    lastNameGroup.map((author) => (
+      <li>
+      <span className='authors__letter'>{author.group}</span>
       <ul className='authors-list'>
-        {lastNameGroup.map(author => {
-          return author.children.map(item => (<Author key={item._id}
-            author={item} />))
-        })}
+        {author.children.map(item => (<Author key={item._id}
+          author={item} />))
+        }
       </ul>
     </li>
-  );
+    )));
+      
 };
 
 export default Authors;
