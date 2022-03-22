@@ -1,0 +1,18 @@
+.authors {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.authors-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 14px;
+  margin-bottom: 53px;
+}
+
+.authors__letter {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+}

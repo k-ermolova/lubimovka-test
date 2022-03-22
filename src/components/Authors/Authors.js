@@ -1,4 +1,6 @@
-import Author from './Author';
+import Author from '../Author/Author';
+
+import './Authors.css';
 
 function Authors(props) {
   const lastName = props.authors.reduce((r, e) => {

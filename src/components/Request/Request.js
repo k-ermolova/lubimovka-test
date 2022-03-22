@@ -1,3 +1,5 @@
+import './Request.css';
+
 function Request(props) {
   return (
     <form className='search' onSubmit={props.onSubmit}>

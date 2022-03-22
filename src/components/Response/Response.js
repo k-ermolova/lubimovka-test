@@ -1,5 +1,7 @@
-import Authors from './Authors';
-import Card from './Card';
+import Authors from '../Authors/Authors';
+import Card from '../Card/Card';
+
+import './Response.css';
 
 function Response(props) {
   const handleOrder = (arr, property) => {

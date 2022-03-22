@@ -1,8 +1,11 @@
-import Request from './Request';
-import Title from './Title';
-import Response from './Response';
 import { useState } from 'react';
-import JSONDATA from '../utils/data.json';
+
+import Request from '../Request/Request';
+import Title from '../Title/Title';
+import Response from '../Response/Response';
+import JSONDATA from '../../utils/data.json';
+
+import './App.css';
 
 function App() {
   const dataList = JSONDATA.result;
