@@ -11,7 +11,7 @@
 - React
 
 ## Как посмотреть
-
-1. `git clone https://github.com/k-ermolova/lubimovka-test.git`.
-2. Установить зависимости, используя `npm i`.
-3. Запустить с помощью `npm start`.
+- Перейти по [ссылке](https://k-ermolova.github.io/lubimovka-test/)
+- 1. `git clone https://github.com/k-ermolova/lubimovka-test.git`.
+  2. Установить зависимости, используя `npm i`.
+  3. Запустить с помощью `npm start`.
