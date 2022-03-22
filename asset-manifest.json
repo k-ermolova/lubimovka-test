@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/lubimovka-test/static/css/main.aeffcaf8.css",
+    "main.js": "/lubimovka-test/static/js/main.06d7e760.js",
+    "static/media/HelveticaNeueCyr-Light.woff": "/lubimovka-test/static/media/HelveticaNeueCyr-Light.c1b4dce50601b85b61e7.woff",
+    "static/media/HelveticaNeueCyr-Roman.woff": "/lubimovka-test/static/media/HelveticaNeueCyr-Roman.0247694e510ebe67cce1.woff",
+    "static/media/HelveticaNeueCyr-Light.woff2": "/lubimovka-test/static/media/HelveticaNeueCyr-Light.ca1c9d28a98e39bc4088.woff2",
+    "static/media/HelveticaNeueCyr-Roman.woff2": "/lubimovka-test/static/media/HelveticaNeueCyr-Roman.d59df5a538d671a54c79.woff2",
+    "index.html": "/lubimovka-test/index.html",
+    "main.aeffcaf8.css.map": "/lubimovka-test/static/css/main.aeffcaf8.css.map",
+    "main.06d7e760.js.map": "/lubimovka-test/static/js/main.06d7e760.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aeffcaf8.css",
+    "static/js/main.06d7e760.js"
+  ]
+}
